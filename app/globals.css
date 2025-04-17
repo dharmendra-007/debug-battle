@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Anton&family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 20, 20, 20;
+  --primary-red: 255, 25, 25;
+}
+
+@font-face {
+  font-family: 'harry';
+  src: url('/fonts/HARRYP__.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  font-family: 'Orbitron', sans-serif;
+  min-height: 100vh;
+}
+
+.font-harry-main {
+  font-family: 'harry', sans-serif;
+}
+
+.text-gold {
+  color: #d4af37;
+}
+
+.glow-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.glow-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 25, 25, 0.3) 0%,
+    transparent 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease-out;
+}
+
+.glow-button:hover::before {
+  transform: scale(1);
+}
+
+.debug-title {
+  background: linear-gradient(45deg, #ff1919, #ff4444);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(255, 25, 25, 0.5);
+}
+
+@keyframes scoreCount {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.score-animation {
+  animation: scoreCount 1s ease-out forwards;
+}
+
+.editor-container {
+  border: 1px solid rgba(70, 130, 180, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hint-button {
+  background: rgba(40, 90, 170, 0.08); /* Enchanted midnight blue glow */
+  border: 1px solid rgba(70, 130, 180, 0.4); /* Steel blue shimmer */
+  color: #a5d7ff; /* Soft luminescent spell-text */
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Almendra', serif; /* HP-style font */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hint-button:hover {
+  background: rgba(70, 130, 180, 0.15); /* Magical hover glow */
+  border-color: rgba(173, 216, 230, 0.6);
+  box-shadow: 0 0 8px rgba(100, 149, 237, 0.4); /* Wand sparkle glow */
+  animation: flicker 1.5s infinite;
+}
+
+.submit-button {
+  background: rgba(40, 90, 170, 0.08); /* Enchanted midnight blue glow */
+  border: 1px solid rgba(70, 130, 180, 0.4); /* Steel blue shimmer */
+  color: #a5d7ff; /* Soft luminescent spell-text */
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'orbitron', serif; /* HP-style font */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: rgba(70, 130, 180, 0.15); /* Magical hover glow */
+  border-color: rgba(173, 216, 230, 0.6);
+  box-shadow: 0 0 8px rgba(100, 149, 237, 0.4); /* Wand sparkle glow */
+  animation: flicker 1.5s infinite;
+}
+
+.return-button {
+  background: rgba(40, 90, 170, 0.08); /* Enchanted midnight blue glow */
+  border: 1px solid rgba(70, 130, 180, 0.4); /* Steel blue shimmer */
+  color: #a5d7ff; /* Soft luminescent spell-text */
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  font-family: 'Almendra', serif; /* HP-style font */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.return-button:hover {
+  background: rgba(70, 130, 180, 0.15); /* Magical hover glow */
+  border-color: rgba(173, 216, 230, 0.6);
+  box-shadow: 0 0 8px rgba(100, 149, 237, 0.4); /* Wand sparkle glow */
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { box-shadow: 0 0 8px rgba(100, 149, 237, 0.4); }
+  50% { box-shadow: 0 0 12px rgba(100, 149, 237, 0.7); }
+}
+
+.wrong-attempt {
+  background: rgba(170, 40, 40, 0.08); /* Crimson mist glow */
+  border: 1px solid rgba(180, 70, 70, 0.4); /* Red shimmer */
+  color: #ffc1c1; /* Soft enchanted red text */
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'Almendra', serif; /* Magical tech font */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.wrong-attempt:hover {
+  background: rgba(180, 70, 70, 0.15); /* Glowing crimson aura */
+  border-color: rgba(255, 160, 160, 0.6);
+  box-shadow: 0 0 8px rgba(255, 99, 99, 0.4); /* Fiery wand glow */
+}
+
+
