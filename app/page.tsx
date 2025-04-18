@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative px-4 py-8 bg-gradient-to-b from-[#1a0f0f] to-[#000] text-gold font-harry overflow-x-hidden">
-      <MagicWandCursor/>
+      <MagicWandCursor />
       <motion.img
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -89,13 +89,30 @@ export default function Home() {
         >
           <h2 className="text-2xl font-Almendra font-medium text-gold mb-4">Scroll of Spells (Rules)</h2>
           <ul className="text-gray-300 text-sm font-cormorant space-y-2">
-            <li>🪄 Fix the magical bugs</li>
-            <li>🕰 Timer begins with your first spell</li>
-            <li>✨ Perfect score: 100 points</li>
-            <li>🔮 Hints cost -25 points</li>
-            <li>⏳ -1 point every 5 seconds</li>
-            <li>🧟 Wrong spell: -15 points</li>
-            <li>🚪 Skip = No points</li>
+            <li className="transition hover:scale-105 hover:text-yellow-400 hover:drop-shadow-md duration-200">
+              🪄 Fix the magical bugs to win
+            </li>
+            <li className="transition hover:scale-105 hover:text-blue-300 hover:drop-shadow-md duration-200">
+              🕰 Timer starts with the first question
+            </li>
+            <li className="transition hover:scale-105 hover:text-green-400 hover:drop-shadow-md duration-200">
+              ✨ Perfect Score: 100 points
+            </li>
+            <li className="transition hover:scale-105 hover:text-purple-400 hover:drop-shadow-md duration-200">
+              🔮 Casting a spell costs 25 points
+            </li>
+            <li className="transition hover:scale-105 hover:text-red-400 hover:drop-shadow-md duration-200">
+              ⏳ Lose 1 point every 5 seconds
+            </li>
+            <li className="transition hover:scale-105 hover:text-red-500 hover:drop-shadow-md duration-200">
+              🧟 Wrong incantation: -15 points
+            </li>
+            <li className="transition hover:scale-105 hover:text-blue-400 hover:drop-shadow-md duration-200">
+              🚪 Using a Time-Turn (skip bug) earns no points
+            </li>
+            <li className="transition hover:scale-105 hover:text-indigo-400 hover:drop-shadow-md duration-200">
+              🔁 Reset Spell (retry bug): No cost
+            </li>
           </ul>
         </motion.div>
 
@@ -151,6 +168,6 @@ export default function Home() {
 
         </motion.div>
       </motion.div>
-    </div>
+    </div >
   );
 }
